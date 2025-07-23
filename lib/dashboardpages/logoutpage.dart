@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 
 
 class LogoutPage extends StatelessWidget {
-   const LogoutPage({super.key});
+  LogoutPage({super.key});
 
   @override
   Widget build(BuildContext context) {final width = MediaQuery.of(context).size.width;

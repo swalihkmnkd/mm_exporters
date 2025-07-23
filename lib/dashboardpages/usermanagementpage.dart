@@ -87,6 +87,7 @@ class UserManagementPage extends StatelessWidget {
 
       body: Consumer<MainProvider>(
         builder: (context, value, child) {
+
           return Column(
             children: [
 
@@ -139,19 +140,73 @@ class UserManagementPage extends StatelessWidget {
                               ),
                               columns: [
                                 DataColumn(
-                                  label: tableHeading(text: "SL".tr(),),
+                                  label: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0,
+                                    ),
+                                    child: Text(
+                                      "SL".tr(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 DataColumn(
-                                  label: tableHeading(text: "Name".tr(),),
+                                  label: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 20,
+                                      vertical: 5,
+                                    ),
+                                    child: Text(
+                                      "Name".tr(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 DataColumn(
-                                  label: tableHeading(text:  "Phone Number".tr(),),
+                                  label: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 20,
+                                      vertical: 5,
+                                    ),
+                                    child: Text(
+                                      "Phone Number".tr(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 DataColumn(
-                                  label: tableHeading(text:"Edit".tr(),),
+                                  label: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 20,
+                                      vertical: 5,
+                                    ),
+                                    child: Text(
+                                      "Edit".tr(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 DataColumn(
-                                  label:tableHeading(text:"Delete".tr(), ),
+                                  label: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 20,
+                                      vertical: 5,
+                                    ),
+                                    child: Text(
+                                      "Delete".tr(),
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ],
                               rows: List.generate(
@@ -220,7 +275,7 @@ class UserManagementPage extends StatelessWidget {
                             );
                           },
                         ),
-                      ),pageIndicator(list: value.shirts, itemsPerPage: 10),
+                      ),pageIndicator(list: value.shirts, itemsPerPage:10)
                     ],
                   ),
                 ),

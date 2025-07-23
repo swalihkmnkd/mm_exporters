@@ -1,12 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:mm_exporters/widgets.dart';
 import 'package:provider/provider.dart';
+
 import '../provider.dart';
-import '../widgets.dart';
 
 class SamplesPage extends StatelessWidget {
-  const SamplesPage({super.key});
-
   @override
   Widget build(BuildContext context) { bool count = context.locale.languageCode == 'ar';
     final width = MediaQuery.of(context).size.width;
@@ -96,22 +95,85 @@ class SamplesPage extends StatelessWidget {
                           ),
                           columns: [
                             DataColumn(
-                              label:tableHeading(text:"SL".tr(), ),
+                              label: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(
+                                  "SL".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                             DataColumn(
-                              label:tableHeading(text:"Date".tr(), ),
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "Date".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                             DataColumn(
-                              label:tableHeading(text:"Tracking Number".tr(), ),
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "Tracking Number".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                             DataColumn(
-                              label:tableHeading(text: "Styles".tr(),),
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "Styles".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                             DataColumn(
-                              label: tableHeading(text:"Document".tr(), ),
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "Document".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                             DataColumn(
-                              label: tableHeading(),
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                           rows: List.generate(
@@ -211,7 +273,7 @@ class SamplesPage extends StatelessWidget {
                         );
                       },
                     ),
-                    pageIndicator(list: value.shirts, itemsPerPage: 10),
+                    pageIndicator(list: value.shirts, itemsPerPage: 10)
                   ],
                 ),
               ),

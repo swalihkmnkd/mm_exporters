@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:mm_exporters/provider.dart';
-
 import 'package:mm_exporters/widgets.dart';
 
 class StaffManagementPage extends StatelessWidget {
@@ -122,26 +121,103 @@ class StaffManagementPage extends StatelessWidget {
                                 (states) => Colors.white,
                           ),
                           columns: [
-
                             DataColumn(
-                              label: tableHeading(text: "SL".tr(),),
+                              label: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8.0,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "SL".tr(),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                             DataColumn(
-                              label:tableHeading(text:  "Name".tr(),),
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "Name".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                             DataColumn(
-                              label:tableHeading(text:"Designation".tr(), ) ,
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "Designation".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                             DataColumn(
-                              label:tableHeading(text:"Phone Number".tr(), ),
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 5,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "Phone Number".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                             DataColumn(
-                              label:tableHeading(text: "Place".tr(), ),
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "Place".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),DataColumn(
-                              label: tableHeading(text: "Edit".tr(),),
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "Edit".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                             DataColumn(
-                              label:tableHeading(text:"Delete".tr(), ),
+                              label: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 5,
+                                ),
+                                child: Text(
+                                  "Delete".tr(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                           rows: List.generate(
@@ -224,7 +300,7 @@ class StaffManagementPage extends StatelessWidget {
                         );
                       },
                     ),
-              pageIndicator(list: value.shirts, itemsPerPage: 10),
+                    pageIndicator(list: value.shirts, itemsPerPage: 10)
                   ],
                 ),
               ),

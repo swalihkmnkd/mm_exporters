@@ -155,7 +155,7 @@ class StylesPages extends StatelessWidget {
                           },
                         ),
                         dashboardDropdown(
-                          size: width * 0.09,
+                          size: width * 0.07,
                           text: "Colour".tr(),
                           selected: value.selectedColorItem,
                           items: value.colors,
@@ -275,24 +275,24 @@ class StylesPages extends StatelessWidget {
                   ),
                   Divider(thickness: 1, color: Color(0xffCFCFCF)),
                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 8),
-                      child: Scrollbar( controller: verticalScrollCT,
-                        scrollbarOrientation: ScrollbarOrientation.left,
-                        thumbVisibility: true,
-                        child: SingleChildScrollView(controller: verticalScrollCT,
-                                physics: const BouncingScrollPhysics(),
-                                scrollDirection: Axis.vertical,
-                               // horizontal scroll for 8 columns
-                          child: Column(
-                            children: [
-                              Scrollbar(controller: horizontalScrollCT,
-                                thumbVisibility: true,
-                                thickness: 14,
-                                child: SingleChildScrollView(controller: horizontalScrollCT,
-                                  physics: const BouncingScrollPhysics(),
-                                  scrollDirection: Axis.horizontal,
-                                  child: Consumer<MainProvider>(
+                    child: Scrollbar(controller: horizontalScrollCT,
+                      thumbVisibility: true,
+                      thickness: 14,
+                      child: SingleChildScrollView(controller: horizontalScrollCT,
+physics: const BouncingScrollPhysics(),
+scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 8),
+                          child: Scrollbar( controller: verticalScrollCT,
+                            scrollbarOrientation: ScrollbarOrientation.left,
+                            thumbVisibility: true,
+                            child: SingleChildScrollView(controller: verticalScrollCT,
+                                    physics: const BouncingScrollPhysics(),
+                                    scrollDirection: Axis.vertical,
+                                   // horizontal scroll for 8 columns
+                              child: Column(
+                                children: [
+                                  Consumer<MainProvider>(
                                     builder: (context, value, child) {
                                       return DataTable(horizontalMargin: 0,
                                         headingRowHeight: 48,
@@ -312,75 +312,329 @@ class StylesPages extends StatelessWidget {
                                           (states) => Colors.white,
                                         ),
                                         columns: [
-                                          DataColumn(label:tableHeading() ,),
+                                          DataColumn(label: SizedBox(width: 10)),
                                           DataColumn(
-                                            label:tableHeading(text: "SL".tr(),),
+                                            label: Padding(
+                                              padding: const EdgeInsets.symmetric(
+                                                horizontal: 15,
+                                              ),
+                                              child: Center(
+                                                child: Text(
+                                                  "SL".tr(),
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label: tableHeading(text:"Status".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Status".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text:"Reference".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Reference".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text:"Style No".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Style No".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label: tableHeading(text:"Garment".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Garment".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label: tableHeading(text:"Size Group".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Size Group".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text:"Fabric".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Fabric".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text: "Type".tr(),),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Type".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text:"GSM".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "GSM".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading( text:"Count&\nConstruction".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Count&\nConstruction".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label: tableHeading(text: "Season".tr(),),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Season".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label: tableHeading(text:"Colour".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Colour".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text:"Size&Ratio".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Size&Ratio".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text: "Qty".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Qty".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label: tableHeading(text: "PO Number".tr(),),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "PO Number".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text:"PO Date".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "PO Date".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text:"Lead Time".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Lead Time".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text:"EDD".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "EDD".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text: "Price/Unit".tr(),),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Price/Unit".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label: tableHeading(text:"Cost of Style".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Cost of Style".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label: tableHeading(text: "Designer".tr(),),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Designer".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label: tableHeading(text:"Supplier".tr(), ),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Supplier".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                           DataColumn(
-                                            label:tableHeading(text: "Note".tr(),),
+                                            label: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: 20,
+                                                vertical: 5,
+                                              ),
+                                              child: Text(
+                                                "Note".tr(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                         ],
                                         rows: List.generate(
@@ -441,7 +695,7 @@ class StylesPages extends StatelessWidget {
                                                     child: SizedBox(
                                                       width: 100,
                                                       child: Image.asset(
-                                                        value.shirts[value.start + index],
+                                                        "${value.shirts[value.start + index]}",
                                                       ),
                                                     ),
                                                   ),
@@ -605,10 +859,10 @@ class StylesPages extends StatelessWidget {
                                         ),
                                       );
                                     },
-                                  ),
-                                ),
-                              ),pageIndicator(list: value.shirts, itemsPerPage: 10),
-                            ],
+                                  ),pageIndicator(list: value.shirts, itemsPerPage: 10),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -624,3 +878,9 @@ class StylesPages extends StatelessWidget {
 
   }
 }
+// Scrollbar( controller: horizontalScrollCT,
+// thumbVisibility: true,
+// thickness: 14,
+// child: SingleChildScrollView( controller: horizontalScrollCT,
+// physics: const BouncingScrollPhysics(),
+// scrollDirection: Axis.horizontal,

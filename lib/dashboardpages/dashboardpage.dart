@@ -6,7 +6,7 @@ import 'package:mm_exporters/provider.dart';
 
 
 class DashBoardPage extends StatelessWidget {
-  const DashBoardPage({super.key});
+  DashBoardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,8 @@ class DashBoardPage extends StatelessWidget {
                       text: "mm Exporters",
                       selected: value.selectedDayItem,
                       items: value.mmExpoeters,
-                      onChanged: (newValue) {
-                        value.selectday(newValue.toString());
+                      onChanged: (newvalue) {
+                        value.selectday(newvalue.toString());
                       },
                     ),
                     dashboardDropdown(
@@ -48,8 +48,8 @@ class DashBoardPage extends StatelessWidget {
                       text: "Seasons".tr(),
                       selected: value.selectedSeasonItem,
                       items: value.seasons,
-                      onChanged: (newValue) {
-                        value.selectedseason(newValue.toString());
+                      onChanged: (newvalue) {
+                        value.selectedseason(newvalue.toString());
                       },
                     ),
                     dashboardDropdown(
@@ -57,8 +57,8 @@ class DashBoardPage extends StatelessWidget {
                       text: "Years",
                       selected: value.selectedYearItem,
                       items:value.years,
-                      onChanged: (newValue) {
-                        value.selectedyear(newValue.toString());
+                      onChanged: (newvalue) {
+                        value.selectedyear(newvalue.toString());
                       },
                     ),
                   ],
@@ -105,14 +105,14 @@ class DashBoardPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            count==true?mainProvider.toArabicDigits("34"):"34",
+                            mainProvider.toArabicDigits("34"),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
                           ),
                           Text(
-                            count==true?mainProvider.toArabicDigits("34"):"34",
+                            mainProvider.toArabicDigits("34"),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
