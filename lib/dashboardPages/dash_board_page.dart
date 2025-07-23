@@ -11,7 +11,7 @@ class DashBoardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final  mainProvider=Provider.of<MainProvider>(context,listen: true);
-    bool count = context.locale.languageCode == 'ar';
+    bool count =  context.locale.languageCode == 'ar';
     return Scaffold(
       appBar: AppBar(automaticallyImplyLeading: false,
         shape: Border(bottom: BorderSide(width: 1, color: Color(0xffCFCFCF))),
