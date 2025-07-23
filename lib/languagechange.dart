@@ -1,17 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:mm_exporters/dashboard.dart';
 import 'package:mm_exporters/login_page.dart';
-import 'package:mm_exporters/provider.dart';
-import 'package:provider/provider.dart';
 
-class Languagechange extends StatelessWidget {
-  const Languagechange({super.key});
-
+class LanguageChange extends StatelessWidget {
+  const LanguageChange({super.key});
   @override
   Widget build(BuildContext context) {
-    Locale currentLocale = context.locale;
-    final mainProvider = Provider.of<MainProvider>(context, listen: true);
     return Scaffold(
       body: Center(
         child: FittedBox(
@@ -33,11 +27,16 @@ class Languagechange extends StatelessWidget {
                     backgroundColor: Color(0xff16852A),
                     fixedSize: Size(700, 25), // Width: 200, Height: 100
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10), // Rounded corners
+                      borderRadius: BorderRadius.circular(
+                        10,
+                      ), // Rounded corners
                     ),
                   ),
                   onPressed: () {},
-                  child: Text("Super Admin", style: TextStyle(color: Colors.white)),
+                  child: Text(
+                    "Super Admin",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
               Text(
@@ -57,15 +56,15 @@ class Languagechange extends StatelessWidget {
                       widget: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            "Merchandiser",
-
-                          ),
+                          Text("Merchandiser"),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: VerticalDivider(width: 1, color: Color(0xff8D8D8D)),
+                            child: VerticalDivider(
+                              width: 1,
+                              color: Color(0xff8D8D8D),
+                            ),
                           ),
-                          Text("BOM",),
+                          Text("BOM"),
                         ],
                       ),
                       onPressed: () {},
@@ -73,19 +72,13 @@ class Languagechange extends StatelessWidget {
                     moduletextbuttons(
                       context: context,
                       width: 165,
-                      widget: Text(
-                        "Store v.1",
-
-                      ),
+                      widget: Text("Store v.1"),
                       onPressed: () {},
                     ),
                     moduletextbuttons(
                       context: context,
                       width: 165,
-                      widget: Text(
-                        "Store v.2",
-
-                      ),
+                      widget: Text("Store v.2"),
                       onPressed: () {},
                     ),
                   ],
@@ -94,23 +87,16 @@ class Languagechange extends StatelessWidget {
               FittedBox(
                 child: Row(
                   children: [
-
                     moduletextbuttons(
                       context: context,
                       width: 350,
-                      widget: Text(
-                        "Cutting",
-
-                      ),
+                      widget: Text("Cutting"),
                       onPressed: () {},
                     ),
                     moduletextbuttons(
                       context: context,
                       width: 350,
-                      widget: Text(
-                        "Production",
-
-                      ),
+                      widget: Text("Production"),
                       onPressed: () {},
                     ),
                   ],
@@ -119,23 +105,16 @@ class Languagechange extends StatelessWidget {
               FittedBox(
                 child: Row(
                   children: [
-
                     moduletextbuttons(
                       context: context,
                       width: 350,
-                      widget: Text(
-                        "Finishing",
-
-                      ),
+                      widget: Text("Finishing"),
                       onPressed: () {},
                     ),
                     moduletextbuttons(
                       context: context,
                       width: 350,
-                      widget: Text(
-                        "Accounts Section",
-
-                      ),
+                      widget: Text("Accounts Section"),
                       onPressed: () {},
                     ),
                   ],
@@ -152,26 +131,29 @@ class Languagechange extends StatelessWidget {
               FittedBox(
                 child: Row(
                   children: [
-
                     moduletextbuttons(
                       context: context,
                       width: 350,
-                      widget: Text(
-                        "Arabic Asst Buyer",
-
-                      ),
-                      onPressed: () {context.setLocale(Locale('ar'));
- Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));},
+                      widget: Text("Arabic Asst Buyer"),
+                      onPressed: () {
+                        context.setLocale(Locale('ar'));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
                     ),
                     moduletextbuttons(
                       context: context,
                       width: 350,
-                      widget: Text(
-                        "Asst Buyer",
-
-                      ),
-                      onPressed: () {context.setLocale(Locale('en'));
- Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));},
+                      widget: Text("Asst Buyer"),
+                      onPressed: () {
+                        context.setLocale(Locale('en'));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -179,23 +161,16 @@ class Languagechange extends StatelessWidget {
               FittedBox(
                 child: Row(
                   children: [
-
                     moduletextbuttons(
                       context: context,
                       width: 350,
-                      widget: Text(
-                        "Designer",
-
-                      ),
+                      widget: Text("Designer"),
                       onPressed: () {},
                     ),
                     moduletextbuttons(
                       context: context,
                       width: 350,
-                      widget: Text(
-                        "Supplier",
-
-                      ),
+                      widget: Text("Supplier"),
                       onPressed: () {},
                     ),
                   ],
@@ -218,7 +193,8 @@ Widget moduletextbuttons({
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: TextButton(
-      style: TextButton.styleFrom(backgroundColor: Color(0xffF7F7F7),
+      style: TextButton.styleFrom(
+        backgroundColor: Color(0xffF7F7F7),
         fixedSize: Size(width, 25), // Width: 200, Height: 100
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12), // Rounded corners
@@ -233,19 +209,3 @@ Widget moduletextbuttons({
     ),
   );
 }
-
-// TextButton(style: TextButton.styleFrom(
-// fixedSize: const Size(200, 50), // Width: 200, Height: 100
-// shape: RoundedRectangleBorder(
-// borderRadius: BorderRadius.circular(12), // Rounded corners
-// side: const BorderSide(
-// color: Colors.blue, // Border color
-// width: 1,           // Border width
-// ),
-// ),
-// ),onPressed: (){
-// context.setLocale(Locale('ar'));
-// Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage(),));
-// print( tr("Count", namedArgs: {"count": "5"}));
-// }, child: Text("Arabic")),
-

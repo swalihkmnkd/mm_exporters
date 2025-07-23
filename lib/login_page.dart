@@ -9,6 +9,6 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Login(loginnumber: phone_field(), buttonname: "Continue".tr(),);
+    return LoginWidget(loginNumber: phoneField(), buttonName: "Continue".tr(),);
   }
 }

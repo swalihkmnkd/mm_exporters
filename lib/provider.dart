@@ -1,41 +1,37 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
-
-import 'package:provider/provider.dart';
-
-import 'dashboardPages/dashBoardPage.dart';
-import 'dashboardPages/ledgerPage.dart';
-import 'dashboardPages/logoutPage.dart';
-import 'dashboardPages/poPage.dart';
-import 'dashboardPages/samplesPage.dart';
-import 'dashboardPages/shipmentPage.dart';
-import 'dashboardPages/staffManagementPage.dart';
-import 'dashboardPages/stylesPages.dart';
-import 'dashboardPages/userManagementPage.dart';
+import 'dashboardPages/dashboardpage.dart';
+import 'dashboardPages/ledgerpage.dart';
+import 'dashboardPages/logoutpage.dart';
+import 'dashboardPages/popage.dart';
+import 'dashboardPages/samplespage.dart';
+import 'dashboardPages/shipmentpage.dart';
+import 'dashboardPages/staffmanagementpage.dart';
+import 'dashboardPages/stylespages.dart';
+import 'dashboardPages/usermanagementpage.dart';
 
 class MainProvider extends ChangeNotifier {
   DateTimeRange? selectedDateRange;
   int selectedIndex = 0;
 
   List dashboardPages = [
-    Dashboardpage(),
-    Stylespages(),
-    Samplespage(),
-    Shipmentpage(),
-    Popage(),
-    Ledgerpage(),
-    Staffmanagementpage(),
-    Usermanagementpage(),
-    Logoutpage(),
+    DashBoardPage(),
+    StylesPages(),
+    SamplesPage(),
+    ShipmentPage(),
+    PoPage(),
+    LedgerPage(),
+    StaffManagementPage(),
+    UserManagementPage(),
+    LogoutPage(),
   ];
   String language="Arabic";
-  String selectedDay = "mm Exporters";
-  String selectedSeason = "Seasons";
-  String selectedYear = "Years";
-  String selectedStatus = "Status";
-  String selectedColor = "Colour";
+  String selectedDayItem = "mm Exporters";
+  String selectedSeasonItem = "Seasons";
+  String selectedYearItem = "Years";
+  String selectedStatusItem = "Status";
+  String selectedColorItem = "Colour";
   String selectedUserType = "Supplier";
   List<String> dashboardEnglishText = [
     'Dashboard',
@@ -209,7 +205,6 @@ class MainProvider extends ChangeNotifier {
     "assets/shirt1.png",
     "assets/shirt2.png",
   ];
-  int itemsPerPage = 10;
   int currentPage = 0;
   int start = 0;
   int end = 10;
@@ -231,7 +226,7 @@ class MainProvider extends ChangeNotifier {
   }
 
   List<int> checkindex=[];
-  List<String> getCurrentPageItems(int selectedPage) {
+  List<String> getCurrentPageItems(int selectedPage,int itemsPerPage) {
     currentPage = selectedPage;
     start = currentPage * itemsPerPage;
     end = start + itemsPerPage;
@@ -240,34 +235,33 @@ class MainProvider extends ChangeNotifier {
     return shirts.sublist(start, end);
   }
 
-  changeLanguageSelection(String selectedlanguage) {
+  void changeLanguageSelection(String selectedlanguage) {
     language = selectedlanguage;
     notifyListeners();
   }
 
-  selectday(String selected) {
-    selectedDay = selected;
+  void selectday(String selected) {
+    selectedDayItem = selected;
     notifyListeners();
   }
 
-  selectedseason(String selected) {
-    selectedSeason = selected;
-
+   void selectedseason(String selected) {
+    selectedSeasonItem = selected;
     notifyListeners();
   }
 
-  selectedyear(String selected) {
-    selectedYear = selected;
+  void selectedyear(String selected) {
+    selectedYearItem = selected;
     notifyListeners();
   }
 
-  selectedstatus(String selected) {
-    selectedStatus = selected;
+  void selectedstatus(String selected) {
+    selectedStatusItem = selected;
     notifyListeners();
   }
 
   selectedcolor(String selected) {
-    selectedColor = selected;
+    selectedColorItem = selected;
     notifyListeners();
   }
   stylePageCheck(int selected){

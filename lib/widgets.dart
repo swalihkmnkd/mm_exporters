@@ -1,23 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:mm_exporters/provider.dart';
+import 'package:provider/provider.dart';
 import 'dashboard.dart';
 
+class LoginWidget extends StatelessWidget {
+  final Widget loginNumber;
+  final String buttonName;
 
-class Login extends StatelessWidget {
-
-  Widget loginnumber;
-  String buttonname;
-
-  Login({
-    super.key,
-    required Widget this.loginnumber,
-    required String this.buttonname,
-  });
+  const LoginWidget({super.key, required this.loginNumber, required this.buttonName});
 
   @override
-  Widget build(BuildContext context) {bool count = context.locale.languageCode == 'ar';
-    print(buttonname);
+  Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -64,7 +59,7 @@ class Login extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: 30),
-                            loginnumber,
+                            loginNumber,
                             SizedBox(height: 20),
                             SizedBox(
                               height: 30,
@@ -73,20 +68,21 @@ class Login extends StatelessWidget {
                                 backgroundColor: Color(0xff5B5EFC),
 
                                 child: Text(
-                                  buttonname,
+                                  buttonName,
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 10,
                                   ),
                                 ),
                                 onPressed: () {
-                                  if (buttonname.toString() == "Continue".tr()) {
+                                  if (buttonName.toString() ==
+                                      "Continue".tr()) {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Login(
-                                          loginnumber: otp_field(),
-                                          buttonname: "Verify".tr(),
+                                        builder: (context) => LoginWidget(
+                                          loginNumber: otpField(),
+                                          buttonName: "Verify".tr(),
                                         ),
                                       ),
                                     );
@@ -94,7 +90,7 @@ class Login extends StatelessWidget {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Dashboard(),
+                                        builder: (context) => DashBoard(),
                                       ),
                                     );
                                   }
@@ -116,9 +112,9 @@ class Login extends StatelessWidget {
   }
 }
 
-// phone number textfield for login
-Widget phone_field() {
-  return Container(
+// phone number text field for login
+Widget phoneField() {
+  return SizedBox(
     height: 30,
     child: TextField(
       keyboardType: TextInputType.phone,
@@ -145,8 +141,8 @@ Widget phone_field() {
   );
 }
 
-//otp textfield widget
-Widget otp_field() {
+//otp text field widget
+Widget otpField() {
   return SizedBox(
     height: 73,
     child: Column(
@@ -166,7 +162,10 @@ Widget otp_field() {
           ),
         ),
         SizedBox(height: 10),
-        Text("Resend otp".tr(), style: TextStyle(color: Colors.blue, fontSize: 10)),
+        Text(
+          "Resend otp".tr(),
+          style: TextStyle(color: Colors.blue, fontSize: 10),
+        ),
       ],
     ),
   );
@@ -181,7 +180,6 @@ Widget dashboardItems({required String iconImage, required String itemName}) {
         color: Color(0xffF0E100),
         borderRadius: BorderRadius.circular(6),
       ),
-
       child: Row(
         children: [
           Padding(
@@ -209,12 +207,15 @@ Widget dashboardDropdown({
   required ValueChanged<String?> onChanged,
 }) {
   return Container(
-
     height: 36,
     width: size,
 
-    padding: EdgeInsets.only(left: size*0.03, right:size*0.03),
-    margin: EdgeInsets.only(left:size*0.05, right:size*0.05,top: size*0.01),
+    padding: EdgeInsets.only(left: size * 0.03, right: size * 0.03),
+    margin: EdgeInsets.only(
+      left: size * 0.05,
+      right: size * 0.05,
+      top: size * 0.01,
+    ),
     decoration: BoxDecoration(
       border: Border.all(color: Color(0xffCFCFCF)),
       borderRadius: BorderRadius.circular(6),
@@ -222,9 +223,13 @@ Widget dashboardDropdown({
     child: DropdownButtonHideUnderline(
       child: DropdownButton<String>(
         isDense: false, // Reduces vertical space
-        isExpanded: true,focusColor: Color(0xffCFCFCF),
-        style: TextStyle(fontSize: 14), hint: Text(text, style: TextStyle(
-        overflow: TextOverflow.ellipsis,fontSize: 14,)),
+        isExpanded: true,
+        focusColor: Color(0xffCFCFCF),
+        style: TextStyle(fontSize: 14),
+        hint: Text(
+          text,
+          style: TextStyle(overflow: TextOverflow.ellipsis, fontSize: 14),
+        ),
         icon: Icon(Icons.keyboard_arrow_down, size: 20),
         borderRadius: BorderRadius.circular(2),
         value: selected,
@@ -234,5 +239,191 @@ Widget dashboardDropdown({
         }).toList(),
       ),
     ),
+  );
+}
+
+Widget dataColumnShipment({required double width, String text = ""}) {
+  return Align(
+    alignment: Alignment.centerLeft,
+
+    child: Container(
+      height: 100,
+      width: width,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white, width: 1),
+        color: Color(0xffDEB9A3),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget dataRowShipment({
+  String whiteBoxText = "",
+  bool isWhiteBox = false,
+  int noOfItem = 1,
+  bool isList = false,
+  required double width,
+  bool isImage = false,
+  String image = "",
+  String listText = '',
+  String singleText = "",
+}) {
+  return Container(
+    height: noOfItem <= 1 ? null : noOfItem * 40,
+    width: width,
+    decoration: BoxDecoration(
+      border: Border(
+        top: BorderSide(color: Colors.white, width: 2),
+        bottom: BorderSide(color: Color(0xffDEB9A3), width: 2),
+      ),
+    ),
+    child: isList
+        ? ListView.builder(
+            itemBuilder: (context, index) {
+              return isImage
+                  ? Padding(
+                      padding: const EdgeInsets.only(bottom: 1, top: 1),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(4),
+                        child: Image.asset(
+                          width: 30,
+                          height: 29,
+                          image,
+                          fit: BoxFit.fitHeight,
+                        ),
+                      ),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 6,
+                        horizontal: 0,
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          listText,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    );
+            },
+            itemCount: noOfItem,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+          )
+        : isWhiteBox
+        ? Padding(
+            padding: const EdgeInsets.all(1),
+            child: Container(
+              width: 75,
+
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xffCCCCCC), width: 1),
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Center(
+                child: Text(
+                  whiteBoxText,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+                ),
+              ),
+            ),
+          )
+        : Center(
+            child: Text(
+              singleText.tr(),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+            ),
+          ),
+  );
+}
+
+Widget tableHeading({String text = ""}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+    child: Text(text, style: TextStyle(fontWeight: FontWeight.bold)),
+  );
+}
+
+Widget pageIndicator({required List list, required int itemsPerPage}) {
+  return Consumer<MainProvider>(
+    builder: (context, value, child) {
+      int stylePageNumber = (list.length + itemsPerPage - 1) ~/ itemsPerPage;
+      bool count = context.locale.languageCode == 'ar';
+      return SizedBox(
+        height: 30,
+        width: MediaQuery.of(context).size.width * 0.8,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 30,
+              width: 30,
+              child: Center(
+                child: IconButton(
+                  onPressed: () {
+                    value.getCurrentPageItems(
+                      value.currentPage >= 1 ? value.currentPage - 1 : 0,
+                      10,
+                    );
+                  },
+                  icon: Icon(Icons.arrow_back, size: 20),
+                ),
+              ),
+            ),
+
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: stylePageNumber,
+              itemBuilder: (context, index) => OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(
+                    color: value.currentPage == index
+                        ? Color(0xffD5D7DA)
+                        : Color(0xffF7F7F7),
+                    width: 1,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+                onPressed: () {
+                  value.getCurrentPageItems(index, 10);
+                },
+                child: Text(
+                  count == true
+                      ? value.toArabicDigits("${index + 1}")
+                      : "${index + 1}",
+                ),
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                value.getCurrentPageItems(
+                  value.currentPage <= stylePageNumber - 2
+                      ? value.currentPage + 1
+                      : stylePageNumber - 1,
+                  10,
+                );
+              },
+              icon: Icon(Icons.arrow_forward, size: 20),
+            ),
+          ],
+        ),
+      );
+    },
   );
 }
