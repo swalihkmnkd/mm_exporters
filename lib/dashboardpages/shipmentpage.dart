@@ -321,7 +321,7 @@ class ShipmentPage extends StatelessWidget {
                                                             Colors.orange,
                                                         value:
                                                             value.checkindex
-                                                                .contains(index)
+                                                                 .contains(index)
                                                             ? true
                                                             : false,
                                                         onChanged: (selected) {
