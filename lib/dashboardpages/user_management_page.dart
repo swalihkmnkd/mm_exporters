@@ -275,66 +275,7 @@ class UserManagementPage extends StatelessWidget {
                             );
                           },
                         ),
-                      ),SizedBox(
-                        height: 30,
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-
-
-                            SizedBox(
-                              height: 30,
-                              width: 30,
-                              child: Center(
-                                child: IconButton(
-                                  onPressed: () {
-                                    value.getCurrentPageItems(
-                                      value.currentPage >= 1
-                                          ? value.currentPage - 1
-                                          : 0,
-                                    );
-                                  },
-                                  icon: Icon(Icons.arrow_back, size: 20),
-                                ),
-                              ),
-                            ),
-
-                            ListView.builder(
-                              shrinkWrap: true,
-                              physics: NeverScrollableScrollPhysics(),
-                              scrollDirection: Axis.horizontal,
-                              itemCount: stylepagenumber,
-                              itemBuilder: (context, index) => OutlinedButton(
-                                style: OutlinedButton.styleFrom(
-                                  side: BorderSide(
-                                    color: value.currentPage == index
-                                        ? Color(0xffD5D7DA)
-                                        : Color(0xffF7F7F7),
-                                    width: 1,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  value.getCurrentPageItems(index);
-                                },
-                                child: Text(count==true?value.toArabicDigits("${index + 1}"):"${index + 1}"),
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                value.getCurrentPageItems(
-                                  value.currentPage <= stylepagenumber - 2
-                                      ? value.currentPage + 1
-                                      : stylepagenumber - 1,
-                                );
-                              },
-                              icon: Icon(Icons.arrow_forward, size: 20),
-                            ),
-                          ],
-                        ),
-                      ),
+                      ),pageIndicator(list: value.shirts, itemsPerPage:10)
                     ],
                   ),
                 ),
