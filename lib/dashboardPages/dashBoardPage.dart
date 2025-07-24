@@ -55,7 +55,7 @@ class DashBoardPage extends StatelessWidget {
                     dashboardDropdown(
                       size: MediaQuery.of(context).size.width * 0.11,
                       text: "Years",
-                      selected: value.selectedYear,
+                      selected: value.selectedYearItem,
                       items:value.years,
                       onChanged: (newvalue) {
                         value.selectedyear(newvalue.toString());
