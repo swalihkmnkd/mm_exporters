@@ -1,10 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:mm_exporters/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../provider.dart';
 
-class Samplespage extends StatelessWidget {
+class SamplesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) { bool count = context.locale.languageCode == 'ar';
     final width = MediaQuery.of(context).size.width;
