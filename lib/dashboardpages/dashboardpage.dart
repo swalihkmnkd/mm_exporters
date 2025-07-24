@@ -1,12 +1,12 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';import 'package:easy_localization/easy_localization.dart';
+
 import 'package:mm_exporters/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:mm_exporters/provider.dart';
 
 
 class DashBoardPage extends StatelessWidget {
-  DashBoardPage({super.key});
+  const DashBoardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,8 @@ class DashBoardPage extends StatelessWidget {
                       text: "mm Exporters",
                       selected: value.selectedDayItem,
                       items: value.mmExpoeters,
-                      onChanged: (newvalue) {
-                        value.selectDay(newvalue.toString());
+                      onChanged: (newValue) {
+                        value.selectDay(newValue.toString());
                       },
                     ),
                     dashboardDropdown(
@@ -48,8 +48,8 @@ class DashBoardPage extends StatelessWidget {
                       text: "Seasons".tr(),
                       selected: value.selectedSeasonItem,
                       items: value.seasons,
-                      onChanged: (newvalue) {
-                        value.selectedseason(newvalue.toString());
+                      onChanged: (newValue) {
+                        value.selectedseason(newValue.toString());
                       },
                     ),
                     dashboardDropdown(
@@ -57,8 +57,8 @@ class DashBoardPage extends StatelessWidget {
                       text: "Years",
                       selected: value.selectedYearItem,
                       items:value.years,
-                      onChanged: (newvalue) {
-                        value.selectedYear(newvalue.toString());
+                      onChanged: (newValue) {
+                        value.selectedYear(newValue.toString());
                       },
                     ),
                   ],
