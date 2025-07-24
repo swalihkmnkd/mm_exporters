@@ -87,9 +87,7 @@ class StaffManagementPage extends StatelessWidget {
 
       body: Consumer<MainProvider>(
         builder: (context, value, child) {
-          int stylepagenumber =
-              (value.shirts.length + value.itemsPerPage - 1) ~/
-                  value.itemsPerPage;
+
           return Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(
