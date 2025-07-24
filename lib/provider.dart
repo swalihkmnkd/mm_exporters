@@ -265,10 +265,10 @@ class MainProvider extends ChangeNotifier {
     notifyListeners();
   }
   stylePageCheck(int selected){
-    if(checkindex.contains(selected)){
-      checkindex.remove(selected);notifyListeners();
+    if(checkIndex.contains(selected)){
+      checkIndex.remove(selected);notifyListeners();
     }else {
-      checkindex.add(selected);notifyListeners();
+      checkIndex.add(selected);notifyListeners();
     }
 
     notifyListeners();
