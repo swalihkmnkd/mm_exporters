@@ -225,7 +225,7 @@ class MainProvider extends ChangeNotifier {
     return input.split('').map((char) => westernToArabicDigits[char] ?? char).join();
   }
 
-  List<int> checkindex=[];
+  List<int> checkIndex=[];
   List<String> getCurrentPageItems(int selectedPage,int itemsPerPage) {
     currentPage = selectedPage;
     start = currentPage * itemsPerPage;
