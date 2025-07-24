@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:mm_exporters/provider.dart';
 import 'package:mm_exporters/widgets.dart';
 
-class Usermanagementpage extends StatelessWidget {
-  const Usermanagementpage({super.key});
+class UserManagementPage extends StatelessWidget {
+  const UserManagementPage({super.key});
 
   @override
   Widget build(BuildContext context) { bool count = context.locale.languageCode == 'ar';
