@@ -35,7 +35,7 @@ class StylesPages extends StatelessWidget {
                       selected: value.selectedDayItem,
                       items: value.mmExpoeters,
                       onChanged: (newValue) {
-                        value.selectday(newValue!);
+                        value.selectDay(newValue!);
                       },
                     );
                   },
