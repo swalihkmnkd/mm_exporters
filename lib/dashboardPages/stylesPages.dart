@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:mm_exporters/provider.dart';
 import 'package:mm_exporters/widgets.dart';
 
-class Stylespages extends StatelessWidget {
-  const Stylespages({super.key});
+class StylesPages extends StatelessWidget {
+  const StylesPages({super.key});
 
   @override
   Widget build(BuildContext context) {  var horizontalScrollCT = ScrollController(); bool count = context.locale.languageCode == 'ar';
