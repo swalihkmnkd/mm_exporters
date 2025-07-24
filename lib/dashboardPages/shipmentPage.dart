@@ -87,9 +87,7 @@ class ShipmentPage extends StatelessWidget {
         builder: (context, value, child) { var horizontalScrollCT = ScrollController();
         var verticalScrollCT = ScrollController();
 
-        int stylepagenumber =
-              (value.shirts.length + value.itemsPerPage - 1) ~/
-              value.itemsPerPage;
+
           return Expanded(
             child: Scrollbar( controller: horizontalScrollCT,
               thumbVisibility: true,
