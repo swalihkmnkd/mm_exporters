@@ -280,8 +280,6 @@ class UserManagementPage extends StatelessWidget {
                   ),
                 ),
               ),
-
-
             ],
           );
         },
