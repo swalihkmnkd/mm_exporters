@@ -1,15 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'dashboardPages/dashboardpage.dart';
-import 'dashboardPages/ledgerpage.dart';
-import 'dashboardPages/logoutpage.dart';
-import 'dashboardPages/popage.dart';
-import 'dashboardPages/samplespage.dart';
-import 'dashboardPages/shipmentpage.dart';
-import 'dashboardPages/staffmanagementpage.dart';
-import 'dashboardPages/stylespages.dart';
-import 'dashboardPages/usermanagementpage.dart';
+import 'dashboardPages/dash_board_page.dart';
+import 'dashboardPages/ledger_page.dart';
+import 'dashboardPages/logout_page.dart';
+import 'dashboardPages/po_page.dart';
+import 'dashboardPages/samples_page.dart';
+import 'dashboardPages/shipment_page.dart';
+import 'dashboardPages/staff_management_page.dart';
+import 'dashboardPages/styles_pages.dart';
+import 'dashboardPages/user_management_page.dart';
 
 class MainProvider extends ChangeNotifier {
   DateTimeRange? selectedDateRange;
