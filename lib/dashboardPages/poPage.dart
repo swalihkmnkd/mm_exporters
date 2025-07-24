@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:mm_exporters/provider.dart';
-import 'package:mm_exporters/widgets.dart';
 
 class Popage extends StatelessWidget {
   const Popage({super.key});
