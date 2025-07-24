@@ -665,7 +665,7 @@ scrollDirection: Axis.horizontal,
                                                               ),
                                                               checkColor: Colors.black,
                                                               activeColor: Colors.orange,
-                                                              value: value.checkindex.contains(index)?true:false,
+                                                              value: value.checkIndex.contains(index)?true:false,
                                                               onChanged: (selected) {
                                                                 value.stylePageCheck(index);
                                                               },
