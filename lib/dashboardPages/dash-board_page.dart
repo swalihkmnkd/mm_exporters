@@ -1,12 +1,12 @@
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';import 'package:easy_localization/easy_localization.dart';
+
 import 'package:mm_exporters/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:mm_exporters/provider.dart';
 
 
 class DashBoardPage extends StatelessWidget {
-  DashBoardPage({super.key});
+  const DashBoardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
