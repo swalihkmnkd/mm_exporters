@@ -125,9 +125,7 @@ class StylesPages extends StatelessWidget {
 
           body: Consumer<MainProvider>(
             builder: (context, value, child) {
-              int stylepagenumber =
-                  (value.shirts.length + value.itemsPerPage - 1) ~/
-                  value.itemsPerPage;
+
               return Column(
                 children: [
                   // Dropdowns below AppBar
