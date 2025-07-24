@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:mm_exporters/provider.dart';
 
 
-class Dashboardpage extends StatelessWidget {
-  Dashboardpage({super.key});
+class DashBoardPage extends StatelessWidget {
+  DashBoardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
