@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import '../provider.dart';
 import '../widgets.dart';
 
-class Shipmentpage extends StatelessWidget {
-  const Shipmentpage({super.key});
+class ShipmentPage extends StatelessWidget {
+  const ShipmentPage({super.key});
 
   @override
   Widget build(BuildContext context) { bool count = context.locale.languageCode == 'ar';
