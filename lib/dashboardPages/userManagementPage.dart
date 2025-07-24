@@ -211,7 +211,7 @@ class UserManagementPage extends StatelessWidget {
                               ],
                               rows: List.generate(
                                 value
-                                    .getCurrentPageItems(value.currentPage)
+                                    .getCurrentPageItems(value.currentPage,10)
                                     .length,
                                 (index) {
                                   return DataRow(
