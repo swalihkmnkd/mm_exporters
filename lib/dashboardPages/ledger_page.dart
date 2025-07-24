@@ -6,6 +6,8 @@ import '../provider.dart';
 import '../widgets.dart';
 
 class LedgerPage extends StatelessWidget {
+  const LedgerPage({super.key});
+
   @override
   Widget build(BuildContext context) { bool count = context.locale.languageCode == 'ar';
     final width = MediaQuery.of(context).size.width;
@@ -74,7 +76,7 @@ class LedgerPage extends StatelessWidget {
                   selected: value.selectedDayItem,
                   items: value.mmExpoeters,
                   onChanged: (newvalue) {
-                    value.selectday(newvalue.toString());
+                    value.selectDay(newvalue.toString());
                   },
                 );
               },
