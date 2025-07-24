@@ -139,7 +139,7 @@ class StylesPages extends StatelessWidget {
                         dashboardDropdown(
                           size: width * 0.10,
                           text: "Seasons",
-                          selected: value.selectedSeason,
+                          selected: value.selectedSeasonItem,
                           items: value.seasons,
                           onChanged: (newValue) {
                             value.selectedseason(newValue!);
