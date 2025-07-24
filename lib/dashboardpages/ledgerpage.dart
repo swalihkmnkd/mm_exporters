@@ -74,7 +74,7 @@ class LedgerPage extends StatelessWidget {
                   selected: value.selectedDayItem,
                   items: value.mmExpoeters,
                   onChanged: (newvalue) {
-                    value.selectday(newvalue.toString());
+                    value.selectDay(newvalue.toString());
                   },
                 );
               },
