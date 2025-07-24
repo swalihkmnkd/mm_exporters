@@ -240,7 +240,7 @@ class MainProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void selectday(String selected) {
+  void selectDay(String selected) {
     selectedDayItem = selected;
     notifyListeners();
   }
