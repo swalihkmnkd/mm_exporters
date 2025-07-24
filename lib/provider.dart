@@ -250,7 +250,7 @@ class MainProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void selectedyear(String selected) {
+  void selectedYear(String selected) {
     selectedYearItem = selected;
     notifyListeners();
   }

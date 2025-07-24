@@ -58,7 +58,7 @@ class DashBoardPage extends StatelessWidget {
                       selected: value.selectedYearItem,
                       items:value.years,
                       onChanged: (newvalue) {
-                        value.selectedyear(newvalue.toString());
+                        value.selectedYear(newvalue.toString());
                       },
                     ),
                   ],
