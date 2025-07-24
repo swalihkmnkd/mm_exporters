@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import '../provider.dart';
 import '../widgets.dart';
 
-class Ledgerpage extends StatelessWidget {
+class LedgerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) { bool count = context.locale.languageCode == 'ar';
     final width = MediaQuery.of(context).size.width;
