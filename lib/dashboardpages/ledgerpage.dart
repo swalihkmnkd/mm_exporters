@@ -6,6 +6,8 @@ import '../provider.dart';
 import '../widgets.dart';
 
 class LedgerPage extends StatelessWidget {
+  const LedgerPage({super.key});
+
   @override
   Widget build(BuildContext context) { bool count = context.locale.languageCode == 'ar';
     final width = MediaQuery.of(context).size.width;
