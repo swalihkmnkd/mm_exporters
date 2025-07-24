@@ -148,7 +148,7 @@ class StylesPages extends StatelessWidget {
                         dashboardDropdown(
                           size: width * 0.08,
                           text: "Status".tr(),
-                          selected: value.selectedStatus,
+                          selected: value.selectedStatusItem,
                           items: value.statuses,
                           onChanged: (newValue) {
                             value.selectedstatus(newValue!);
