@@ -39,8 +39,8 @@ class DashBoardPage extends StatelessWidget {
                       text: "mm Exporters",
                       selected: value.selectedDayItem,
                       items: value.mmExpoeters,
-                      onChanged: (newvalue) {
-                        value.selectDay(newvalue.toString());
+                      onChanged: (newValue) {
+                        value.selectDay(newValue.toString());
                       },
                     ),
                     dashboardDropdown(
@@ -48,8 +48,8 @@ class DashBoardPage extends StatelessWidget {
                       text: "Seasons".tr(),
                       selected: value.selectedSeasonItem,
                       items: value.seasons,
-                      onChanged: (newvalue) {
-                        value.selectedseason(newvalue.toString());
+                      onChanged: (newValue) {
+                        value.selectedseason(newValue.toString());
                       },
                     ),
                     dashboardDropdown(
@@ -57,8 +57,8 @@ class DashBoardPage extends StatelessWidget {
                       text: "Years",
                       selected: value.selectedYearItem,
                       items:value.years,
-                      onChanged: (newvalue) {
-                        value.selectedyear(newvalue.toString());
+                      onChanged: (newValue) {
+                        value.selectedYear(newValue.toString());
                       },
                     ),
                   ],
