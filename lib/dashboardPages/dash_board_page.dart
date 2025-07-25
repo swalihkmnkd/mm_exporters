@@ -105,14 +105,14 @@ class DashBoardPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            mainProvider.toArabicDigits("34"),
+                            count==true?mainProvider.toArabicDigits("34"):"34",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                             ),
                           ),
                           Text(
-                            mainProvider.toArabicDigits("34"),
+                            count==true?mainProvider.toArabicDigits("34"):"34",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,

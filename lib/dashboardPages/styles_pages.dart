@@ -275,24 +275,24 @@ class StylesPages extends StatelessWidget {
                   ),
                   Divider(thickness: 1, color: Color(0xffCFCFCF)),
                   Expanded(
-                    child: Scrollbar(controller: horizontalScrollCT,
-                      thumbVisibility: true,
-                      thickness: 14,
-                      child: SingleChildScrollView(controller: horizontalScrollCT,
-physics: const BouncingScrollPhysics(),
-scrollDirection: Axis.horizontal,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 8),
-                          child: Scrollbar( controller: verticalScrollCT,
-                            scrollbarOrientation: ScrollbarOrientation.left,
-                            thumbVisibility: true,
-                            child: SingleChildScrollView(controller: verticalScrollCT,
-                                    physics: const BouncingScrollPhysics(),
-                                    scrollDirection: Axis.vertical,
-                                   // horizontal scroll for 8 columns
-                              child: Column(
-                                children: [
-                                  Consumer<MainProvider>(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 8),
+                      child: Scrollbar( controller: verticalScrollCT,
+                        scrollbarOrientation: ScrollbarOrientation.left,
+                        thumbVisibility: true,
+                        child: SingleChildScrollView(controller: verticalScrollCT,
+                                physics: const BouncingScrollPhysics(),
+                                scrollDirection: Axis.vertical,
+                               // horizontal scroll for 8 columns
+                          child: Column(
+                            children: [
+                              Scrollbar(controller: horizontalScrollCT,
+                                thumbVisibility: true,
+                                thickness: 14,
+                                child: SingleChildScrollView(controller: horizontalScrollCT,
+                                  physics: const BouncingScrollPhysics(),
+                                  scrollDirection: Axis.horizontal,
+                                  child: Consumer<MainProvider>(
                                     builder: (context, value, child) {
                                       return DataTable(horizontalMargin: 0,
                                         headingRowHeight: 48,
@@ -859,10 +859,10 @@ scrollDirection: Axis.horizontal,
                                         ),
                                       );
                                     },
-                                  ),pageIndicator(list: value.shirts, itemsPerPage: 10),
-                                ],
-                              ),
-                            ),
+                                  ),
+                                ),
+                              ),pageIndicator(list: value.shirts, itemsPerPage: 10),
+                            ],
                           ),
                         ),
                       ),
